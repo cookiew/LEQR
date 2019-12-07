@@ -185,10 +185,10 @@ function simulation(ax, x_init, gamma, d_cov, traj_ref, plot_flag)
             _, _, _, _, K_list, k_list, flag = mixed_leqr_general(Cn_trajectory, cn_trajectory, Cr_trajectory, cr_trajectory, F_trajectory, W_trajectory, test_gamma)
             test_gamma /= 2
         end
-        if test_gamma != gamma
-            println(" ---------------------------- ")
-            println(" non exploding gamma ", test_gamma)
-        end
+        # if test_gamma != gamma
+        #     println(" ---------------------------- ")
+        #     println(" non exploding gamma ", test_gamma)
+        # end
 
         ###########################
         # forward simulation
@@ -419,5 +419,7 @@ end
 # ##################################
 # functions to test
 # ##################################
-# compare_noise(0, true)
+println(" risk neutral case ")
+compare_noise(0, true)
+println(" risk sensitive case ")
 compare_noise(99, true)
